@@ -101,3 +101,8 @@ input[type="password"] {
   text-align: center;
   margin-left: 85px
 }
+
+#error-msg {
+  color: #fe255c;
+  margin-bottom: 10px;
+}

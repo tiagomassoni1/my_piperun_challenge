@@ -1,4 +1,4 @@
-let activiesCacheMap = null;
+let activiesCacheMap;
 
 async function loadActivities(filterDt) {
   document.querySelector("tbody").innerHTML = "";
@@ -115,10 +115,6 @@ function insertTableItem(item, id) {
   tbody.appendChild(tr);
 }
 
-function statusChange(index) {
-  // put edit
-}
-
 function removeActivities(id) {
   fetch("https://api.pipe.run/v1/activities/" + id, {
     method: "delete",
@@ -149,8 +145,10 @@ function saveActivity(id) {
         status: statusValue,
         owner_id: respValue,
       }),
-    }).then(() =>
+    }).then(() =>{
+      loadActivities(false)
       document.querySelector(".modal-container").classList.remove("active")
+    }
     );
   } else {
     fetch("https://api.pipe.run/v1/activities", {
@@ -167,14 +165,14 @@ function saveActivity(id) {
       }),
     }).then((response) => {
       if (response.status === 201) {
-        loadActivities(false);
         document.getElementById("m-title").value = "";
         document.getElementById("m-resp").value = "";
         document.getElementById("m-tipo").value = "";
         document.getElementById("m-status").value = "";
         document.querySelector(".modal-container").classList.remove("active");
+        loadActivities(false);
       } else if (response.status === 422) {
-        // status nao processavel - msg
+        alert("Status de entidade não processável, por favor entre com como: Aberto")
       }
     });
   }
@@ -234,7 +232,7 @@ function changeStatus(id) {
       status: 2,
       owner_id: activity.owner_id,
     }),
-  }).then(() => loadActivities(false));;
+  }).then(() => loadActivities(false));
 }
 
 loadActivities(false);
@@ -244,4 +242,9 @@ loadStatusOptions();
 
 if (!sessionStorage.getItem("token")) {
   location.href = "login.html";
+}
+
+function logout(){
+  delete window.sessionStorage.token;
+  return location.href = "login.html"
 }
