@@ -1,0 +1,103 @@
+body {
+  background: #eee !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.logoPipe {
+    justify-content: center;
+    text-align: center;
+}
+
+.logoPipeImg {
+    max-height: 280px;
+    max-width: 280px;
+    width: 100%;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 0.5px solid rgba(141, 141, 141, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.checkbox {
+  font-weight: normal;
+  padding-bottom: 25px;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+
+input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1.2px solid rgb(112, 112, 112);
+}
+
+input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: 1.2px solid rgb(112, 112, 112);
+}
+
+.btn-login {
+  background-color: #fe255c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#invalid-email {
+  background-color: rgb(255, 30, 30);
+  color: #eee;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  margin-left: 85px
+}
+
+#invalid-password {
+  background-color: rgb(252, 30, 30);
+  color: #eee;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  margin-left: 85px
+}
+
+#invalid-user {
+  background-color: red;
+  color: #eee;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  margin-left: 85px
+}

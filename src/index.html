@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebarLogo">
+      <img src="../public/logopiperunwhite.png" alt="logopipe">
+    </div>
+    <ul>
+      <li>
+        <a href="#index" class="active">
+            <span>Atividades</span>
+        </a>
+      </li>
+      <li>
+        <a href="#logout">
+            <span class="logout">Log Out</span>
+        </a>
+      </li>
+  </div>
+    <div class="container" id="index">
+      <div class="header">
+        <span>Cadastro de Atividades:</span>
+        <button onclick="editItem()" id="new">Incluir Atividade</i></button>
+      </div>
+      <div class="rangeDate">
+        <h4>Pesquisa entre datas:</h4>
+        <label for="firstDate">Data Inicial: </label>
+        <input type="date" id="firstDate" name="firstDate">
+        <label for="lastDate">Data Final: </label>
+        <input type="date" id="lastDate" name="lastDate">
+        <button class="btnSearchDate" onclick="loadActivities(true)">Buscar</button>
+      </div>
+    
+      <div class="divTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Responsável</th>
+              <th>Tipo</th>
+              <th>Status</th>
+              <th class="acao">Concluir</th>
+              <th class="acao">Editar</th>
+              <th class="acao">Excluir</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+         </table>
+      </div>
+    </div>
+    
+        <div class="modal-container">
+          <div class="modal">
+            <form>
+              <label for="m-title">Título:</label>
+              <input id="m-title" type="text" required />
+      
+              <label for="m-resp">Responsável:</label>
+              <select id="m-resp" required>
+                <option value="" >Selecione...</option>
+              </select>
+
+              <label for="m-tipo">Tipo de Atividade:</label>
+              <select id="m-tipo" required>
+                <option value="">Selecione...</option>
+              </select>
+
+              <label for="m-status">Status</label>
+              <select id="m-status" required>
+                <option value="" >Selecione...</option>
+              </select>
+
+              <button id="btnSalvar" onclick="saveActivity()">Salvar</button>
+            </form>
+          </div>
+        </div>
+      
+        <script src="./js/index.js"></script>
+    
+</body>
+</html>

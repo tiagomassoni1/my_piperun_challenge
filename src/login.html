@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Desafio Piperun</title>
+    <link rel="stylesheet" href="../src/css/login.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form class="form-signin" onsubmit="handleLogin(event)">
+          <div class="logoPipe">
+              <img src="../public/logopiperun.jpeg" alt="logoPipe" class="logoPipeImg">
+          </div>
+        <h2 class="form-signin-heading">Faça seu login</h2>
+        
+        <div id="error-msg" style="display:none"></div>
+
+        <input
+          id="username"
+          type="text"
+          class="form-control"
+          name="username"
+          placeholder="Seu email"
+          required
+          autofocus
+        />
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Senha"
+          required
+        />
+        <button id="submitBtn" class="btn-login" type="submit">Login</button>
+      </form>
+    </div>
+    <script src="./js/login.js"></script>
+  </body>
+</html>
